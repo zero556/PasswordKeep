@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/btnTextColor"
+
+    tools:context="com.passwordkeep.zeromq.passwordkeep.activites.LoginActivity">
+
+    <!--<LinearLayout-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="60dp"-->
+        <!--android:orientation="horizontal">-->
+        <!--<TextView-->
+            <!--android:id="@+id/textViewLogo"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:textSize="50dp"-->
+            <!--android:text="@string/fa_lock"-->
+            <!--android:textColor="@color/colorPrimary"/>-->
+
+    <!--</LinearLayout>-->
+    <LinearLayout 
+        android:layout_width="fill_parent"
+        android:layout_height="180dp"
+        android:gravity="center"
+        android:paddingTop="80dp"
+        android:layout_gravity="center"
+        android:orientation="horizontal">
+        <!--<EditText-->
+        <!--android:id="@+id/editText2"-->
+        <!--android:layout_width="50dp"-->
+        <!--android:layout_height="50dp"-->
+        <!--android:ems="10"-->
+        <!--android:inputType="none|number"-->
+        <!--app:layout_constraintLeft_toRightOf="@+id/editText5"-->
+        <!--android:layout_marginLeft="50dp"-->
+        <!--app:layout_constraintTop_toTopOf="parent"-->
+        <!--android:layout_marginTop="73dp"-->
+        <!--android:layout_marginRight="8dp"-->
+        <!--app:layout_constraintRight_toRightOf="parent"-->
+        <!--app:layout_constraintHorizontal_bias="0.0" />-->
+
+        <!--<EditText-->
+        <!--android:id="@+id/editText5"-->
+        <!--android:layout_width="50dp"-->
+        <!--android:layout_height="50dp"-->
+        <!--android:layout_marginLeft="50dp"-->
+        <!--android:layout_marginTop="73dp"-->
+        <!--android:ems="10"-->
+        <!--android:inputType="none|number"-->
+        <!--app:layout_constraintLeft_toRightOf="@+id/editText4"-->
+        <!--app:layout_constraintTop_toTopOf="parent" />-->
+
+        <!--<EditText-->
+        <!--android:id="@+id/editText4"-->
+        <!--android:layout_width="50dp"-->
+        <!--android:layout_height="50dp"-->
+        <!--android:layout_marginTop="73dp"-->
+        <!--android:ems="10"-->
+        <!--android:inputType="none|number"-->
+        <!--app:layout_constraintTop_toTopOf="parent"-->
+        <!--app:layout_constraintLeft_toRightOf="@+id/editText3"-->
+        <!--android:layout_marginLeft="50dp" />-->
+
+        <!--<EditText-->
+        <!--android:id="@+id/editText3"-->
+        <!--android:layout_width="50dp"-->
+        <!--android:layout_height="50dp"-->
+        <!--android:layout_marginLeft="16dp"-->
+        <!--android:layout_marginTop="73dp"-->
+        <!--android:ems="10"-->
+        <!--android:inputType="none|number"-->
+        <!--app:layout_constraintLeft_toLeftOf="parent"-->
+        <!--app:layout_constraintTop_toTopOf="parent" />-->
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="50dip">
+
+            <EditText
+                android:id="@+id/editText1"
+                android:layout_width="50dip"
+                android:layout_height="match_parent"
+                android:background="@drawable/edit_bg_shape"
+                android:gravity="center"
+                android:inputType="numberPassword"
+                android:maxLength="1" />
+            <TextView
+                android:id="@+id/textView1"
+                android:layout_width="15dip"
+                android:layout_height="2dip"
+                android:layout_gravity="center"
+                android:background="@color/btnTextColor"
+                android:gravity="center"
+                android:visibility="gone" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="50dip"
+            android:layout_marginLeft="10dp"
+
+            >
+            <EditText
+                android:id="@+id/editText2"
+                android:layout_width="50dip"
+                android:layout_height="fill_parent"
+                android:background="@drawable/edit_bg_shape"
+                android:gravity="center"
+                android:inputType="numberPassword"
+                android:maxLength="1" />
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="15dip"
+                android:layout_height="2dip"
+                android:layout_gravity="center"
+                android:background="#808080"
+                android:gravity="center"
+                android:visibility="gone" />
+        </FrameLayout>
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="50dip"
+            android:layout_marginLeft="10dp"
+            >
+            <EditText
+                android:id="@+id/editText3"
+                android:layout_width="50dip"
+                android:layout_height="fill_parent"
+                android:background="@drawable/edit_bg_shape"
+                android:gravity="center"
+                android:inputType="numberPassword"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:maxLength="1" />
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="15dip"
+                android:layout_height="2dip"
+                android:layout_gravity="center"
+                android:background="#808080"
+                android:gravity="center"
+                android:visibility="gone" />
+        </FrameLayout>
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="50dip"
+            android:layout_marginLeft="10dp"
+            >
+            <EditText
+                android:id="@+id/editText4"
+                android:layout_width="50dip"
+                android:layout_height="fill_parent"
+                android:background="@drawable/edit_bg_shape"
+                android:gravity="center"
+                android:inputType="numberPassword"
+                android:maxLength="1" />
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="15dip"
+                android:layout_height="2dip"
+                android:layout_gravity="center"
+                android:background="#808080"
+                android:gravity="center"
+                android:visibility="gone" />
+        </FrameLayout>
+
+    </LinearLayout>
+</android.support.constraint.ConstraintLayout>

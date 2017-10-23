@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="150dp"
+    android:background="#FFFFFFFF"
+    android:paddingLeft="20dp"
+    android:gravity="center_vertical"
+    android:orientation="vertical" >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+        <TextView
+            android:id="@+id/addcontent_list_title_text"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:textColor="@color/colorText"
+            android:text="Title :"
+            android:gravity="center_vertical"/>
+        <EditText
+            android:paddingLeft="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            android:textSize="12dp"
+            android:id="@+id/createTitle"
+            android:background="@null"
+            />
+    </LinearLayout>
+    <ImageView
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:background="#efefef"
+        android:layout_marginRight="10dp"
+        />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        >
+        <TextView
+            android:id="@+id/addcontent_list_account_text"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:textColor="@color/colorText"
+            android:text="Account :"
+            android:gravity="center_vertical"/>
+        <EditText
+            android:paddingLeft="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            android:textSize="12dp"
+            android:id="@+id/createAccount"
+            android:background="@null"/>
+    </LinearLayout>
+    <ImageView
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:background="#efefef"
+        android:layout_marginRight="10dp"
+        />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+        <TextView
+            android:id="@+id/addcontent_list_pass_text"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:textColor="@color/colorText"
+            android:text="Password :"
+            android:gravity="center_vertical"/>
+        <EditText
+            android:paddingLeft="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            android:textSize="12dp"
+            android:id="@+id/createPassword"
+            android:background="@null"/>
+    </LinearLayout>
+
+</LinearLayout>

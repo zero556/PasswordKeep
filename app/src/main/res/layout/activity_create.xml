@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#fcfbfb"
+    android:orientation="vertical"
+    tools:context="com.passwordkeep.zeromq.passwordkeep.activites.CreateActivity">
+
+
+    <ListView
+        android:id="@+id/listView_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:divider="#00000000"
+        android:dividerHeight="0.2dp">
+    </ListView>
+    <!--<Button-->
+        <!--android:id="@+id/btnAdd"-->
+        <!--android:layout_width="278dp"-->
+        <!--android:layout_height="30dp"-->
+        <!--android:background="@drawable/shape"-->
+        <!--android:onClick="saveOnClick"-->
+        <!--android:text="Save"-->
+        <!--android:textSize="12dp"-->
+        <!--android:textStyle="bold"-->
+        <!--android:textColor="@color/btnTextColor"-->
+        <!--app:layout_constraintLeft_toLeftOf="parent"-->
+        <!--app:layout_constraintTop_toBottomOf="@+id/listView_list"-->
+        <!--android:layout_marginLeft="43dp"-->
+        <!--android:layout_marginTop="20dp" />-->
+</LinearLayout>
+
+

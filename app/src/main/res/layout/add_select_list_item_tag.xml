@@ -1,0 +1,57 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="50dp"
+    android:background="#ffffff"
+    android:paddingLeft="10dp"
+    android:gravity="center_vertical"
+    android:orientation="horizontal" >
+
+    <!--<ImageView-->
+        <!--android:layout_width="38dp"-->
+        <!--android:layout_height="38dp"-->
+        <!--android:layout_marginLeft="10dp"-->
+        <!--android:id="@+id/img"-->
+        <!--android:background="@drawable/circle_shape"-->
+        <!--android:baselineAlignBottom="true"-->
+        <!--/>-->
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:id="@+id/img"
+        android:paddingLeft="10dp"
+        android:textColor="@color/colorIcon"
+        android:textSize="25dp"
+
+        android:text=""
+        android:layout_gravity="center" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:id="@+id/textView"
+            android:paddingLeft="10dp"
+            android:textColor="@color/colorText"
+            android:text=""
+            android:layout_gravity="center" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textViewIcon"
+            android:paddingLeft="10dp"
+            android:textColor="@color/colorIcon"
+            android:textSize="25dp"
+            android:text="@string/fa_trash"
+            android:paddingRight="20dp"
+            android:layout_gravity="center" />
+    </LinearLayout>
+
+</LinearLayout>

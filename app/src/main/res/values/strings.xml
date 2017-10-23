@@ -1,0 +1,43 @@
+<resources>
+    <string name="app_name">Password Keep</string>
+    <string name="text_back"></string>
+    <string name="text_forward">Save</string>
+    <string name="fa_car">&#xf1b9;</string>
+    <string name="fa_apple">&#xf179;</string>
+    <string name="fa_android">&#xf17b;</string>
+    <string name="fa_trash">&#xf1f8;</string>
+    <string name="fa_camera">&#xf030;</string>
+    <string name="fa_chevron_right">&#xf054;</string>
+    <string name="fa_chrome">&#xf268;</string>
+
+    <string name="fa_server">&#xf233;</string>
+    <string name="fa_wechat">&#xf1d7;</string>
+    <string name="fa_windows">&#xf17a;</string>
+    <string name="fa_yen">&#xf157;</string>
+
+    <string name="fa_search">&#xf002;</string>
+    <string name="fa_paste">&#xf0ea;</string>
+    <string name="fa_lock">&#xf023;</string>
+    <string name="fa_gamepad">&#xf11b;</string>
+
+    <string name="fa_cloud_download">&#xf0ed;</string>
+    <string name="fa_clipboard">&#xf0ea;</string>
+    <string name="fa_bank">&#xf19c;</string>
+    <string name="fa_shopping_basket">&#xf291;</string>
+
+    <string name="fa_weibo">&#xf18a;</string>
+    <string name="fa_check_square">&#xf14a;</string>
+    <string name="fa_check_circle">&#xf058;</string>
+    <string name="fa_chevron_circle_left">&#xf137;</string>
+    <string name="fa_chevron_circle_right">&#xf138;</string>
+    <string name="a_check">&#xf00c;</string>
+    <string name="fa_chevron_left">&#xf053;</string>
+
+    <string name="fa_key">&#xf084;</string>
+    <string name="fa_plus_square">&#xf0fe;</string>
+    <string name="fa_th_large">&#xf009;</string>
+    <string name="fa_remove">&#xf00d;</string>
+    <string name="fa_minus_circle">&#xf056;</string>
+
+
+</resources>

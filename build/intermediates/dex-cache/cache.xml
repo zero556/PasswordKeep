@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="true"
+        jar="/Users/VMLDEV6/Desktop/TEST/Android/MyApplication/app/libs/fingerprint.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="9e83a803c510090999504b180e62e094ec5889aa">
+        <dex dex="/Users/VMLDEV6/Desktop/TEST/Android/MyApplication/app/build/intermediates/transforms/dex/debug/folders/1000/2/fingerprint_9233ff008538e525570232cdeb9c500778019024/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/VMLDEV6/Desktop/TEST/Android/MyApplication/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="3be78ebc2706b2e1fe2f12d5726887a92d6c183b">
+        <dex dex="/Users/VMLDEV6/Desktop/TEST/Android/MyApplication/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_a74b504622d764d1299a387d2c83acf3a7227f77/classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/VMLDEV6/Desktop/TEST/Android/MyApplication/FingerprintIdentifyLib/build/intermediates/bundles/default/libs/Samsung_Fingerprint_Pass-v1.2.2.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="df6e3f2451f67cfdc3a1651c90dfc1f04f7469e9">
+        <dex dex="/Users/VMLDEV6/Desktop/TEST/Android/MyApplication/app/build/intermediates/pre-dexed/debug/Samsung_Fingerprint_Pass-v1.2.2_85eccf53bd923c2cf760aaaf14e9c7a0230542e9.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/VMLDEV6/Desktop/TEST/Android/MyApplication/app/libs/gson-2.3.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="ecb6e1f8e4b0e84c4b886c2f14a1500caf309757">
+        <dex dex="/Users/VMLDEV6/Desktop/TEST/Android/MyApplication/app/build/intermediates/pre-dexed/debug/gson-2.3.1_ebd492caab0705fc8d957d4549fb6f2c54577ca6.jar" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/VMLDEV6/Desktop/TEST/Android/MyApplication/FingerprintIdentifyLib/build/intermediates/bundles/default/libs/Samsung_Fingerprint_Pass-v1.2.2.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="df6e3f2451f67cfdc3a1651c90dfc1f04f7469e9">
+        <dex dex="/Users/VMLDEV6/Desktop/TEST/Android/MyApplication/app/build/intermediates/transforms/dex/debug/folders/1000/8/Samsung_Fingerprint_Pass-v1.2.2_85eccf53bd923c2cf760aaaf14e9c7a0230542e9/classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/VMLDEV6/Desktop/TEST/Android/MyApplication/app/libs/fingerprint.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="9e83a803c510090999504b180e62e094ec5889aa">
+        <dex dex="/Users/VMLDEV6/Desktop/TEST/Android/MyApplication/app/build/intermediates/pre-dexed/debug/fingerprint_9233ff008538e525570232cdeb9c500778019024.jar" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/VMLDEV6/Desktop/TEST/Android/MyApplication/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="52ced87ba0eb7cc743354f9dc9a662d0ddd4671d">
+        <dex dex="/Users/VMLDEV6/Desktop/TEST/Android/MyApplication/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_1686e53baf19efb8ba125d78962445e572f76273/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/VMLDEV6/Desktop/TEST/Android/MyApplication/FingerprintIdentifyLib/build/intermediates/bundles/default/libs/Samsung_Fingerprint_Sdk-v1.0.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="94b565debcd2cad5a6d480e1d6e33d8605e2d6fc">
+        <dex dex="/Users/VMLDEV6/Desktop/TEST/Android/MyApplication/app/build/intermediates/transforms/dex/debug/folders/1000/8/Samsung_Fingerprint_Sdk-v1.0.0_49c45d4536e05b08df45303a6093ce3cfee5dd6e/classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/VMLDEV6/Desktop/TEST/Android/MyApplication/FingerprintIdentifyLib/build/intermediates/bundles/default/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="8267bcdba84e73e75a43d64e26d9cf5396cba10d">
+        <dex dex="/Users/VMLDEV6/Desktop/TEST/Android/MyApplication/app/build/intermediates/pre-dexed/debug/classes_124b9eb40b39d8d4da508c5c49325cb51a180dbb.jar" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/VMLDEV6/Desktop/TEST/Android/MyApplication/app/libs/gson-2.3.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="ecb6e1f8e4b0e84c4b886c2f14a1500caf309757">
+        <dex dex="/Users/VMLDEV6/Desktop/TEST/Android/MyApplication/app/build/intermediates/transforms/dex/debug/folders/1000/2/gson-2.3.1_ebd492caab0705fc8d957d4549fb6f2c54577ca6/classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/VMLDEV6/Desktop/TEST/Android/MyApplication/FingerprintIdentifyLib/build/intermediates/bundles/default/libs/MeiZu_Fingerprint.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="f46143576662cb48b81028d3d6c424abb4f2fa8e">
+        <dex dex="/Users/VMLDEV6/Desktop/TEST/Android/MyApplication/app/build/intermediates/pre-dexed/debug/MeiZu_Fingerprint_1f0623a7fe1babe88a59edf846bee09bb1939fec.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/VMLDEV6/Desktop/TEST/Android/MyApplication/FingerprintIdentifyLib/build/intermediates/bundles/default/libs/Samsung_Fingerprint_Sdk-v1.0.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="94b565debcd2cad5a6d480e1d6e33d8605e2d6fc">
+        <dex dex="/Users/VMLDEV6/Desktop/TEST/Android/MyApplication/app/build/intermediates/pre-dexed/debug/Samsung_Fingerprint_Sdk-v1.0.0_49c45d4536e05b08df45303a6093ce3cfee5dd6e.jar" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/VMLDEV6/Desktop/TEST/Android/MyApplication/FingerprintIdentifyLib/build/intermediates/bundles/default/libs/MeiZu_Fingerprint.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="f46143576662cb48b81028d3d6c424abb4f2fa8e">
+        <dex dex="/Users/VMLDEV6/Desktop/TEST/Android/MyApplication/app/build/intermediates/transforms/dex/debug/folders/1000/8/MeiZu_Fingerprint_1f0623a7fe1babe88a59edf846bee09bb1939fec/classes.dex" />
+    </item>
+
+</items>

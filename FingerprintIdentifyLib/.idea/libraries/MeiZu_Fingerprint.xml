@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="MeiZu_Fingerprint">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/libs/MeiZu_Fingerprint.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

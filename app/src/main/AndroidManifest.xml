@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.passwordkeep.zeromq.passwordkeep">
+
+    <uses-permission android:name="android.permission.USE_FINGERPRINT"/>
+    <uses-permission android:name="com.fingerprints.service.ACCESS_FINGERPRINT_MANAGER"/>
+    <uses-permission android:name="com.samsung.android.providers.context.permission.WRITE_USE_APP_FEATURE_SURVEY"/>
+    <application
+        android:name=".activites.MyApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/lock2"
+        android:label=""
+        android:logo="@mipmap/lock3"
+        android:roundIcon="@mipmap/lock3"
+        android:supportsRtl="true"
+        android:theme="@android:style/Theme.NoTitleBar">
+        <activity android:name=".activites.MainActivity" />
+        <activity android:name=".activites.LoginActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activites.CreateActivity"
+            android:windowSoftInputMode="adjustPan" />
+        <activity android:name=".activites.TitleActivity" />
+        <activity android:name=".activites.SelectTypeActivity" />
+        <activity android:name=".activites.ShowPasswordKeepListActivity" />
+        <activity android:name=".activites.ShowPasswordKeepDetailActivity" ></activity>
+    </application>
+
+</manifest>
