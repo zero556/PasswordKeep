@@ -92,7 +92,6 @@ public class PasswordShowListAdapter extends BaseAdapter {
         textType.setTypeface(font);
         //textDelete.setTypeface(font);
         textrash.setTypeface(font);
-
         return converView;
 
     }

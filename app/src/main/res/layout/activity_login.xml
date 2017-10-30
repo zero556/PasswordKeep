@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/btnTextColor"
+    android:background="@color/whileColor"
 
     tools:context="com.passwordkeep.zeromq.passwordkeep.activites.LoginActivity">
 
@@ -92,7 +92,7 @@
                 android:layout_width="15dip"
                 android:layout_height="2dip"
                 android:layout_gravity="center"
-                android:background="@color/btnTextColor"
+                android:background="@color/whileColor"
                 android:gravity="center"
                 android:visibility="gone" />
         </FrameLayout>

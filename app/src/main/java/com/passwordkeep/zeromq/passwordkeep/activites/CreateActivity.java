@@ -16,11 +16,13 @@ import com.passwordkeep.zeromq.passwordkeep.activites.adapter.PasswordCreateAdap
 import com.passwordkeep.zeromq.passwordkeep.activites.model.CustomDialog;
 import com.passwordkeep.zeromq.passwordkeep.activites.model.PasswordKeepModel;
 import com.passwordkeep.zeromq.passwordkeep.activites.model.PasswordTypeModel;
+import com.passwordkeep.zeromq.passwordkeep.activites.utils.Installation;
 import com.passwordkeep.zeromq.passwordkeep.activites.utils.SaveObjectUtils;
 import com.passwordkeep.zeromq.passwordkeep.activites.model.SingletonModel;
 import com.passwordkeep.zeromq.passwordkeep.activites.model.UserModel;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 
 public class CreateActivity extends TitleActivity {
 
@@ -143,12 +145,17 @@ public class CreateActivity extends TitleActivity {
                                         textRemark.getText().toString(),
                                         passwordType);
 
+                                if(  singletonModel.getUserModel().PasswordKeepList==null)
+                                {
 
-                                // userModel.PasswordKeepList=new LinkedList<PasswordKeepModel>();
+                                    singletonModel.getUserModel().PasswordKeepList=new LinkedList<PasswordKeepModel>();
+
+                                }
+
                                 singletonModel.getUserModel().PasswordKeepList.add(passwordKeepModel);
-
+                                String InstallationId = Installation.id(CreateActivity.this);
                                 UserModel userModel=singletonModel.getUserModel();
-                                utils.setObject(userModel.userName,userModel);
+                                utils.setObject(InstallationId,userModel);
                                 Intent intent=new Intent(CreateActivity.this,MainActivity.class);
                                 startActivity(intent);
                             }

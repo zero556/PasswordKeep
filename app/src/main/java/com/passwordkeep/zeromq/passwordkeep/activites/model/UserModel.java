@@ -10,8 +10,10 @@ import java.util.LinkedList;
  */
 
 public class UserModel implements Serializable {
-    public    String userName;
-    public    int loginPassword;
+
+    private    String InstallationId;
+    public     String userName;
+    public     int loginPassword;
     public LinkedList<PasswordKeepModel> PasswordKeepList;
 
 
@@ -23,7 +25,14 @@ public class UserModel implements Serializable {
     }
 
 
-    private  UserModel(String userName,int loginPassword,LinkedList<PasswordKeepModel> PasswordKeepList){
+    public UserModel(String userName,int password,String InstallationId){
+        this.InstallationId=InstallationId;
+        this.userName=userName;
+        this.loginPassword=password;
+    }
+
+    private  UserModel(String InstallationId,String userName,int loginPassword,LinkedList<PasswordKeepModel> PasswordKeepList){
+        this.InstallationId=InstallationId;
         this.userName=userName;
         this.loginPassword=loginPassword;
         this.PasswordKeepList=PasswordKeepList;

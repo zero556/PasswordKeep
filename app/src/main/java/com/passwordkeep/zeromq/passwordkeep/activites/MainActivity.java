@@ -19,6 +19,7 @@ import com.passwordkeep.zeromq.passwordkeep.activites.adapter.PasswordTypeAdapte
 import com.passwordkeep.zeromq.passwordkeep.activites.model.PasswordKeepModel;
 import com.passwordkeep.zeromq.passwordkeep.activites.model.PasswordTypeModel;
 import com.passwordkeep.zeromq.passwordkeep.activites.model.SingletonModel;
+import com.passwordkeep.zeromq.passwordkeep.activites.slidingmenu.SlidingMenu;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -39,6 +40,7 @@ public class MainActivity extends TitleActivity {
     private Toolbar toolbar;
     private SingletonModel singletonModel;
     private ImageView ivRunningMan;
+    private SlidingMenu slidingMenu;
 
     private int WebsiteCount=0;
     private int ServerCount=0;
@@ -74,6 +76,8 @@ public class MainActivity extends TitleActivity {
 
     public  void bulidListView()
     {
+
+        slidingMenu=(SlidingMenu)findViewById(R.id.id_menu);
         singletonModel= SingletonModel.getInstance();
         if(singletonModel.getUserModel().PasswordKeepList!=null)
         {
@@ -83,7 +87,7 @@ public class MainActivity extends TitleActivity {
         setTitle("Password Keeper");
         showBackwardView(R.string.fa_th_large,true);
         Button mBackwardButton = (Button) findViewById(R.id.button_backward);
-        mBackwardButton.setTextSize(23);
+        mBackwardButton.setTextSize(25);
         mBackwardButton.setBackground(null);
         showForwardView(R.string.fa_search,true);
 
@@ -94,7 +98,7 @@ public class MainActivity extends TitleActivity {
           public void onClick(View arg0) {
              // InitialDrawerLayout();
 
-
+              slidingMenu.toggle();
           }
       });
 
@@ -117,7 +121,8 @@ public class MainActivity extends TitleActivity {
 
 
 
-        plistView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        plistView.setOnItemClickListener(
+                new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
 

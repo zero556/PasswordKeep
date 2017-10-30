@@ -107,30 +107,6 @@ public class ShowPasswordKeepListActivity extends TitleActivity {
                 passwordShowAdapter = new PasswordShowListAdapter((LinkedList<PasswordKeepModel>) pData, pContext);
                 plistView.setAdapter(passwordShowAdapter);
 
-
-
-//                SwipeLayout swipeLayout=(SwipeLayout)plistView.findViewById(R.id.swipe);
-//                swipeLayout.getSurfaceView().setOnClickListener(new View.OnClickListener() {
-//                    @Override
-//                    public void onClick(View v) {
-//                        TextView textId = (TextView) v.findViewById(R.id.textViewId);
-//                        String id = textId.getText().toString();
-//
-//                        UserModel userModel = singletonModel.getUserModel();
-//                        PasswordKeepModel passwordKeepModel = new PasswordKeepModel();
-//                        for (PasswordKeepModel p : userModel.PasswordKeepList) {
-//                            if (p.getId().equals(id)) {
-//                                passwordKeepModel = p;
-//                            }
-//                        }
-//
-//                        Intent intent = new Intent(ShowPasswordKeepListActivity.this, ShowPasswordKeepDetailActivity.class);
-//                        Bundle bundle = new Bundle();
-//                        bundle.putSerializable("passwordKeepModel", passwordKeepModel);
-//                        intent.putExtras(bundle);
-//                        startActivity(intent);
-//                    }
-//                });
                 plistView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                     @Override
 

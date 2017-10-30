@@ -17,6 +17,7 @@ import android.widget.Toast;
 import com.passwordkeep.zeromq.passwordkeep.R;
 import com.passwordkeep.zeromq.passwordkeep.activites.model.CustomDialog;
 import com.passwordkeep.zeromq.passwordkeep.activites.model.PasswordKeepModel;
+import com.passwordkeep.zeromq.passwordkeep.activites.utils.Installation;
 import com.passwordkeep.zeromq.passwordkeep.activites.utils.SaveObjectUtils;
 import com.passwordkeep.zeromq.passwordkeep.activites.model.SingletonModel;
 import com.passwordkeep.zeromq.passwordkeep.activites.model.UserModel;
@@ -41,47 +42,62 @@ public class LoginActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
+
         utils=new SaveObjectUtils(this,key);
         singletonModel=SingletonModel.getInstance();
+        String InstallationId = Installation.id(LoginActivity.this);
+        UserModel userModel=utils.getObject(InstallationId,UserModel.class);
         // utils.onDestroy();
 
 
-        mFingerprintIdentify = new FingerprintIdentify(getApplicationContext(), new BaseFingerprint.FingerprintIdentifyExceptionListener() {
-            @Override
-            public void onCatchException(Throwable exception) {
-              Log.w("fingerPrint","\nException：" + exception.getLocalizedMessage());
-            }
-        });
+        if(singletonModel.getUserModel()==null && userModel==null)
+        {
 
-        if (!mFingerprintIdentify.isFingerprintEnable()) {
-
+            Intent intent=new Intent(LoginActivity.this,RegisterActivity.class);
+            startActivity(intent);
 
         }
         else
         {
-            fingerPrint();
+            mFingerprintIdentify = new FingerprintIdentify(getApplicationContext(), new BaseFingerprint.FingerprintIdentifyExceptionListener() {
+                @Override
+                public void onCatchException(Throwable exception) {
+                    Log.w("fingerPrint","\nException：" + exception.getLocalizedMessage());
+                }
+            });
+
+            if (!mFingerprintIdentify.isFingerprintEnable()) {
+
+
+            }
+            else
+            {
+                fingerPrint();
+            }
+
+
+            if(userModel==null) {
+                userModel=new UserModel();
+                userModel.PasswordKeepList=new LinkedList<PasswordKeepModel>();
+            }
+            singletonModel.setUser(userModel);
+
+
+
+            pass1 = (EditText) findViewById(R.id.editText1);
+            pass2 = (EditText) findViewById(R.id.editText2);
+            pass3 = (EditText) findViewById(R.id.editText3);
+            pass4 = (EditText) findViewById(R.id.editText4);
+
+            pass1.addTextChangedListener(textWatcher);
+            pass2.addTextChangedListener(textWatcher);
+            pass3.addTextChangedListener(textWatcher);
+            pass4.addTextChangedListener(textWatcher);
+
+            onWindowFocusChanged(true);
         }
 
-        UserModel userModel=utils.getObject("zero",UserModel.class);
-        if(userModel==null) {
-            userModel=new UserModel();
-            userModel.PasswordKeepList=new LinkedList<PasswordKeepModel>();
-        }
-        singletonModel.setUser(userModel);
 
-
-
-        pass1 = (EditText) findViewById(R.id.editText1);
-        pass2 = (EditText) findViewById(R.id.editText2);
-        pass3 = (EditText) findViewById(R.id.editText3);
-        pass4 = (EditText) findViewById(R.id.editText4);
-
-        pass1.addTextChangedListener(textWatcher);
-        pass2.addTextChangedListener(textWatcher);
-        pass3.addTextChangedListener(textWatcher);
-        pass4.addTextChangedListener(textWatcher);
-
-        onWindowFocusChanged(true);
 
     }
 
@@ -102,6 +118,7 @@ public class LoginActivity extends BaseActivity {
 
         // @Override
         public void afterTextChanged(Editable s) {
+            mFingerprintIdentify.cancelIdentify();
             if (s.toString().length() == 1) {
                 if (pass1.isFocused()) {
                     pass1.clearFocus();
@@ -215,38 +232,8 @@ public class LoginActivity extends BaseActivity {
                 .setPositiveButton("Yes",
                         new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int which) {
-
-                                mFingerprintIdentify.startIdentify(MAX_AVAILABLE_TIMES, new BaseFingerprint.FingerprintIdentifyListener() {
-                                    @Override
-                                    public void onSucceed() {
-                                        Log.w("fingerPrint","\n" + ("successful"));
-
-                                        loginSuccess();
-                                    }
-
-                                    @Override
-                                    public void onNotMatch(int availableTimes) {
-                                        Log.w("fingerPrint","\n" + ("no match"));
-
-                                        Toast.makeText(getApplicationContext(), "no match",
-                                                Toast.LENGTH_SHORT).show();
-
-                                    }
-
-                                    @Override
-                                    public void onFailed(boolean isDeviceLocked) {
-                                        Log.w("fingerPrint","\n" + "failed  " + isDeviceLocked);
-                                        Toast.makeText(getApplicationContext(), "failed",
-                                                Toast.LENGTH_SHORT).show();
-                                    }
-
-                                    @Override
-                                    public void onStartFailedByDeviceLocked() {
-                                        Log.w("fingerPrint","\n" + "start failed");
-                                        Toast.makeText(getApplicationContext(), "start failed",
-                                                Toast.LENGTH_SHORT).show();
-                                    }
-                                });
+                                dialog.dismiss();
+                                tryFingerprint();
 
                             }
                         });
@@ -257,6 +244,7 @@ public class LoginActivity extends BaseActivity {
 
     public void loginSuccess()
     {
+        mFingerprintIdentify.cancelIdentify();
         InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
         imm.hideSoftInputFromWindow(pass4.getWindowToken(), 0);
 
@@ -265,4 +253,48 @@ public class LoginActivity extends BaseActivity {
 
     }
 
+
+
+    private  void tryFingerprint()
+    {
+        mFingerprintIdentify.startIdentify(MAX_AVAILABLE_TIMES, new BaseFingerprint.FingerprintIdentifyListener() {
+            @Override
+            public void onSucceed() {
+                Log.w("fingerPrint","\n" + ("successful"));
+
+                loginSuccess();
+            }
+
+            @Override
+            public void onNotMatch(int availableTimes) {
+                Log.w("fingerPrint","\n" + ("no match"));
+
+                Toast.makeText(getApplicationContext(), "no match",
+                        Toast.LENGTH_SHORT).show();
+
+            }
+
+            @Override
+            public void onFailed(boolean isDeviceLocked) {
+                Log.w("fingerPrint","\n" + "failed  " + isDeviceLocked);
+                Toast.makeText(getApplicationContext(), "failed",
+                        Toast.LENGTH_SHORT).show();
+                mFingerprintIdentify.cancelIdentify();
+                dialog.dismiss();
+
+
+            }
+
+            @Override
+            public void onStartFailedByDeviceLocked() {
+                Log.w("fingerPrint","\n" + "start failed");
+                Toast.makeText(getApplicationContext(), "start failed",
+                        Toast.LENGTH_SHORT).show();
+
+                mFingerprintIdentify.cancelIdentify();
+                dialog.dismiss();
+            }
+        });
+
+    }
 }

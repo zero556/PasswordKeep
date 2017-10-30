@@ -2,9 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.passwordkeep.zeromq.passwordkeep">
 
-    <uses-permission android:name="android.permission.USE_FINGERPRINT"/>
-    <uses-permission android:name="com.fingerprints.service.ACCESS_FINGERPRINT_MANAGER"/>
-    <uses-permission android:name="com.samsung.android.providers.context.permission.WRITE_USE_APP_FEATURE_SURVEY"/>
+    <uses-permission android:name="android.permission.USE_FINGERPRINT" />
+    <uses-permission android:name="com.fingerprints.service.ACCESS_FINGERPRINT_MANAGER" />
+    <uses-permission android:name="com.samsung.android.providers.context.permission.WRITE_USE_APP_FEATURE_SURVEY" />
+
     <application
         android:name=".activites.MyApplication"
         android:allowBackup="true"
@@ -28,7 +29,8 @@
         <activity android:name=".activites.TitleActivity" />
         <activity android:name=".activites.SelectTypeActivity" />
         <activity android:name=".activites.ShowPasswordKeepListActivity" />
-        <activity android:name=".activites.ShowPasswordKeepDetailActivity" ></activity>
+        <activity android:name=".activites.ShowPasswordKeepDetailActivity" />
+        <activity android:name=".activites.RegisterActivity"></activity>
     </application>
 
 </manifest>
