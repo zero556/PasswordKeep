@@ -12,6 +12,7 @@ import android.text.Editable;
 import android.text.TextUtils;
 import android.text.TextWatcher;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -51,7 +52,7 @@ public class PasswordRegisterDialog extends Dialog {
     /**
      * Helper class for creating a custom dialog
      */
-    public static class Builder {
+    public static class Builder  {
 
         private Context context;
         private String title;
@@ -68,6 +69,8 @@ public class PasswordRegisterDialog extends Dialog {
         private String inputPassword ;
         private String inputPasswordConfirm ;
         private String inputUserName;
+
+
 
 
         public String getInputPassword() {
@@ -199,7 +202,7 @@ public class PasswordRegisterDialog extends Dialog {
             View layout = inflater.inflate(R.layout.password_register, null);
             dialog.addContentView(layout, new ViewGroup.LayoutParams(ViewGroup.LayoutParams.FILL_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
             // set the dialog title
-            ((TextView) layout.findViewById(R.id.title)).setText(title);
+            //((TextView) layout.findViewById(R.id.title)).setText(title);
             // set the confirm button
             if (positiveButtonText != null) {
                 ((Button) layout.findViewById(R.id.positiveButton)).setText(positiveButtonText);
@@ -324,23 +327,124 @@ public class PasswordRegisterDialog extends Dialog {
                                 if (inputPasswordConfirm.length() < 4) {
 
                                 } else {
-                                    if (inputPassword != inputPasswordConfirm) {
+                                    if (!inputPassword.equals(inputPasswordConfirm)) {
 
+                                        Toast.makeText(context, "wrong password",
+                                                Toast.LENGTH_SHORT).show();
                                     } else {
-                                        positiveButton.setClickable(true);
-                                        positiveButton.setBackgroundColor( ContextCompat.getColor(context,R.color.colorPrimary));
+                                        InputMethodManager imm = (InputMethodManager) context.getSystemService(Context.INPUT_METHOD_SERVICE);
+                                        imm.hideSoftInputFromWindow(passc4.getWindowToken(), 0) ;
                                     }
                                 }
                             }
                         }
                         else
                         {
-
+                            Toast.makeText(context, "please input user name",
+                                    Toast.LENGTH_SHORT).show();
                         }
                     }
                 }
+                else{
+
+                    if(pass1.isFocused())
+                    {
+                        if(!TextUtils.isEmpty(pass1.getText()))
+                        {
+                            pass1.setText("");
+                        }
+
+                    }
+                    else if (pass2.isFocused()) {
+                        if(TextUtils.isEmpty(pass2.getText()))
+                        {
+                            pass2.clearFocus();
+                            pass1.requestFocus();
+                        }
+                        else
+                        {
+                            pass2.setText("");
+                        }
+
+                    } else if (pass3.isFocused()) {
+                        if(TextUtils.isEmpty(pass3.getText()))
+                        {
+                            pass3.clearFocus();
+                            pass2.requestFocus();
+                        }
+                        else
+                        {
+                            pass3.setText("");
+                        }
+
+                    } else if (pass4.isFocused()) {
+                        if(TextUtils.isEmpty(pass4.getText()))
+                        {
+                            pass4.clearFocus();
+                            pass3.requestFocus();
+                        }
+                        else
+                        {
+                            pass4.setText("");
+                        }
+
+                    }
+                    else if (passc1.isFocused()) {
+                        if(TextUtils.isEmpty(passc1.getText()))
+                        {
+                            passc1.clearFocus();
+                            pass4.requestFocus();
+                        }
+                        else
+                        {
+                            passc1.setText("");
+                        }
+
+                    }else if (passc2.isFocused()) {
+                        if(TextUtils.isEmpty(passc2.getText()))
+                        {
+                            passc2.clearFocus();
+                            passc1.requestFocus();
+                        }
+                        else
+                        {
+                            passc2.setText("");
+                        }
+
+                    }else if (passc3.isFocused()) {
+                        if(TextUtils.isEmpty(passc3.getText()))
+                        {
+                            passc3.clearFocus();
+                            passc2.requestFocus();
+                        }
+                        else
+                        {
+                            passc3.setText("");
+                        }
+
+                    }else if (passc4.isFocused()) {
+                        if(TextUtils.isEmpty(passc4.getText()))
+                        {
+                            passc4.clearFocus();
+                            passc3.requestFocus();
+                        }
+                        else
+                        {
+                            passc4.setText("");
+                        }
+
+                    }
+
+
+                }
+
+
             }
+
+
+
         };
+
 
     }
 

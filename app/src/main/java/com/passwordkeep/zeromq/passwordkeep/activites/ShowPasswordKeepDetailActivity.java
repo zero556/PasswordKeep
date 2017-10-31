@@ -97,7 +97,7 @@ public class ShowPasswordKeepDetailActivity extends TitleActivity {
         CustomDialog.Builder customBuilder = new
                 CustomDialog.Builder(ShowPasswordKeepDetailActivity.this);
         customBuilder.setTitle("Delete")
-                .setMessage("Delete keep ?")
+                .setMessage("Delete keeper ?")
                 .setNegativeButton("No", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int which) {
                         dialog.dismiss();

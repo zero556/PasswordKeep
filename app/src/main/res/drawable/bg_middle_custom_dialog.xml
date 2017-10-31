@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
     <item><shape>
-        <gradient android:angle="270" android:endColor="#f5f5f5" android:startColor="#f5f5f5" />
+        <gradient android:angle="270" android:endColor="@color/gray" android:startColor="@color/gray" />
+        <corners android:topLeftRadius="5dp" android:topRightRadius="5dp" />
     </shape></item>
 </selector>

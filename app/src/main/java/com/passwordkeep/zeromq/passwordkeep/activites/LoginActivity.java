@@ -12,8 +12,11 @@ import android.util.Log;
 import android.view.KeyEvent;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
+import com.daimajia.androidanimations.library.Techniques;
+import com.daimajia.androidanimations.library.YoYo;
 import com.passwordkeep.zeromq.passwordkeep.R;
 import com.passwordkeep.zeromq.passwordkeep.activites.model.CustomDialog;
 import com.passwordkeep.zeromq.passwordkeep.activites.model.PasswordKeepModel;
@@ -30,6 +33,7 @@ import java.util.List;
 public class LoginActivity extends BaseActivity {
 
     private EditText pass1,pass2,pass3,pass4;
+    private TextView passt1;
     private SingletonModel singletonModel;
     SaveObjectUtils utils;
     private static final String key=LoginActivity.class.getSimpleName();
@@ -37,6 +41,8 @@ public class LoginActivity extends BaseActivity {
     private CustomDialog dialog;
     private FingerprintIdentify mFingerprintIdentify;
     private static final int MAX_AVAILABLE_TIMES = 3;
+
+    boolean isFingerprint;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -67,7 +73,7 @@ public class LoginActivity extends BaseActivity {
             });
 
             if (!mFingerprintIdentify.isFingerprintEnable()) {
-
+                onWindowFocusChanged(true);
 
             }
             else
@@ -88,13 +94,14 @@ public class LoginActivity extends BaseActivity {
             pass2 = (EditText) findViewById(R.id.editText2);
             pass3 = (EditText) findViewById(R.id.editText3);
             pass4 = (EditText) findViewById(R.id.editText4);
+            passt1= (TextView) findViewById(R.id.textView1);
 
             pass1.addTextChangedListener(textWatcher);
             pass2.addTextChangedListener(textWatcher);
             pass3.addTextChangedListener(textWatcher);
             pass4.addTextChangedListener(textWatcher);
 
-            onWindowFocusChanged(true);
+            //onWindowFocusChanged(true);
         }
 
 
@@ -198,14 +205,18 @@ public class LoginActivity extends BaseActivity {
         return super.dispatchKeyShortcutEvent(event);
     }
 
-    private Handler hander=new Handler(){
+    private Handler hander=new Handler() {
         public void handleMessage(android.os.Message msg) {
-            pass1.setFocusable(true);
-            pass1.setFocusableInTouchMode(true);
-            pass1.requestFocus();
-            InputMethodManager inputManager = (InputMethodManager)pass1.getContext().getSystemService(Context.INPUT_METHOD_SERVICE);
-            inputManager.showSoftInput(pass1, 0);
-        };
+
+            if (!isFingerprint) {
+                pass1.setFocusable(true);
+                pass1.setFocusableInTouchMode(true);
+                pass1.requestFocus();
+                InputMethodManager inputManager = (InputMethodManager) pass1.getContext().getSystemService(Context.INPUT_METHOD_SERVICE);
+                inputManager.showSoftInput(pass1, 0);
+            }
+        }
+
     };
 
     public void onWindowFocusChanged(boolean hasWindowFocus) {
@@ -224,14 +235,16 @@ public class LoginActivity extends BaseActivity {
                 .setMessage("Use you finger print ?")
                 .setNegativeButton("No", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int which) {
-
+                        isFingerprint=false;
                         mFingerprintIdentify.cancelIdentify();
                         dialog.dismiss();
+                        onWindowFocusChanged(true);
                     }
                 })
                 .setPositiveButton("Yes",
                         new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int which) {
+                                isFingerprint=true;
                                 dialog.dismiss();
                                 tryFingerprint();
 
@@ -267,6 +280,8 @@ public class LoginActivity extends BaseActivity {
 
             @Override
             public void onNotMatch(int availableTimes) {
+
+                YoYo.with(Techniques.Tada).duration(1000).delay(100).playOn(findViewById(R.id.imageViewFingerPrint));
                 Log.w("fingerPrint","\n" + ("no match"));
 
                 Toast.makeText(getApplicationContext(), "no match",
@@ -280,6 +295,8 @@ public class LoginActivity extends BaseActivity {
                 Toast.makeText(getApplicationContext(), "failed",
                         Toast.LENGTH_SHORT).show();
                 mFingerprintIdentify.cancelIdentify();
+                isFingerprint=false;
+                onWindowFocusChanged(true);
                 dialog.dismiss();
 
 
@@ -292,6 +309,8 @@ public class LoginActivity extends BaseActivity {
                         Toast.LENGTH_SHORT).show();
 
                 mFingerprintIdentify.cancelIdentify();
+                isFingerprint=false;
+                onWindowFocusChanged(true);
                 dialog.dismiss();
             }
         });

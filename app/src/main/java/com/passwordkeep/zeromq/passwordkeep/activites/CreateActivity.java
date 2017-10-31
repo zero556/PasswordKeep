@@ -122,7 +122,7 @@ public class CreateActivity extends TitleActivity {
         CustomDialog.Builder customBuilder = new
                 CustomDialog.Builder(this);
         customBuilder.setTitle("Create")
-                .setMessage("Create keep ?")
+                .setMessage("Create keeper ?")
                 .setNegativeButton("No", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int which) {
                         dialog.dismiss();
